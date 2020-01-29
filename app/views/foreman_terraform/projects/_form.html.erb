@@ -1,0 +1,18 @@
+<div class="row">
+<%= form_with model: project, class: "form-horizontal well" do |form| %>
+  <div class="clearfix">
+  <div class="form-group ">
+  <%= label_tag(:q, "Project Name: ", class: "col-md-2 control-label") %>
+  <div class="col-md-4">
+  <%= form.text_field :name, class: "form-control" %>
+  </div>
+</div>
+</div>
+<div class="form-actions">
+  <%= form.submit 'Submit', :class => "btn btn-primary" %>
+  <%= link_to "Cancel", foreman_terraform_projects_path, class: "btn btn-default" %>
+</div>
+
+<% end %>
+
+</div>

@@ -2,37 +2,24 @@
 
 <div class="row">
 <h1>Terraform Projects</h1>
-<a class="btn btn-primary pull-right">Create Project</a>
+
+<%= link_to "Create Project", new_foreman_terraform_project_path, class: "btn btn-primary pull-right" %>
+
+
 </div>
 <div class="row">
 <table class="table table-bordered table-striped table-hover table-fixed">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Name</th>
     </tr>
   </thead>
   <tbody>
+    <% @projects.each do |project|%>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td><%= project.name %></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <% end %>
   </tbody>
 </table>
 

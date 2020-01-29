@@ -31,7 +31,12 @@ module ForemanTerraform
 
         menu :top_menu, :terraform,
              :caption => N_('Projects'),
-             url_hash: { controller: :'foreman_terraform/projects', action: :index },
+             url_hash: { :controller => 'foreman_terraform/projects', :action => :index },
+             parent: :infrastructure_menu
+
+        menu :top_menu, :modules,
+             :caption => N_('Modules'),
+             url_hash: { :controller => 'foreman_terraform/modules', :action => :index },
              parent: :infrastructure_menu
              
 
