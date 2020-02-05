@@ -3,21 +3,23 @@
 <div class="row">
 <h1>Terraform Projects</h1>
 
-<%= link_to "Create Project", new_foreman_terraform_project_path, class: "btn btn-primary pull-right" %>
+<%= link_to "Create Project", new_terraform_project_path, class: "btn btn-primary pull-right" %>
 
 
 </div>
-<div class="row">
+<div class="row" style="margin-top: 20px;">
 <table class="table table-bordered table-striped table-hover table-fixed">
   <thead>
     <tr>
       <th scope="col">Name</th>
+      <th scope="col" width="100px">Action</th>
     </tr>
   </thead>
   <tbody>
     <% @projects.each do |project|%>
     <tr>
       <td><%= project.name %></td>
+       <td><%= link_to "Delete", project, :method => :delete, data: { confirm: 'Are you sure?' },class: "btn btn-sm btn-default" %></td>
     </tr>
     <% end %>
   </tbody>

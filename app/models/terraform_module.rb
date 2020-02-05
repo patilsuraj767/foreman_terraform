@@ -1,0 +1,3 @@
+class TerraformModule < ApplicationRecord
+	
+end

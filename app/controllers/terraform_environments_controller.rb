@@ -1,0 +1,3 @@
+class TerraformEnvironmentsController < ::ApplicationController
+
+end

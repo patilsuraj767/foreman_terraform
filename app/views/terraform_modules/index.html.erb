@@ -1,0 +1,32 @@
+<div class="container-fluid">
+	<div class="row">
+<h1> Terraform Modules </h1>
+<div class="pull-right">
+<%= form_with(url: {action: :upload}, multipart: true) do %>
+  <%= file_field_tag 'module' %> 
+
+  <%= submit_tag("submit",  :class => "btn btn-primary" ) %>
+<% end %>
+</div>
+</div>
+<div class="row" style="margin-top: 20px; display: block;">
+<table class="table table-bordered table-striped table-hover table-fixed">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col" width="100px">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @modules.each do |tmodule|%>
+    <tr>
+      <td><%= tmodule.name %></td>
+      <td><%= link_to "Delete", tmodule, :method => :delete, data: { confirm: 'Are you sure?' },class: "btn btn-sm btn-default" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  
+</div>
+</div>
